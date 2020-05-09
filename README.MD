@@ -1,11 +1,11 @@
-### Команды
+### Install packages
 install packages
 
-    $ yarn
+    `$ npm i`
 
-start development
+### Development
 
-    $ yarn start
+    `$ gulp`
 
-### Структура
-style/system - базовые стили, шрифты и настройки
+### Structure
+----
