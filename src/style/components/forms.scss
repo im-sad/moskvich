@@ -1,0 +1,91 @@
+
+// ЭЛ-ТЫ ФОРМ
+
+
+/* ANY FIELD */
+.field {
+  display: block;
+
+  &__label {
+    display: block;
+    @include font-size(14px, 24px);
+  }
+}
+
+
+
+/* INPUT */
+.input {
+  box-sizing: border-box;
+  transition: border 0.3s, box-shadow 0.3s;
+  outline: none !important;
+  line-height: $form-line-height;
+  vertical-align: middle;
+
+
+  &--fluid {
+    width: 100%;
+  }
+}
+
+.input-main {
+  border: 2px solid $color-inputs;
+  border-radius: 2px;
+  font-weight: 500;
+
+
+  &::placeholder {
+    opacity: 1;
+    color: $color-inputs;
+  }
+
+  &:hover {
+    border-color: $color-border;
+  }
+
+  &:focus {
+    border-color: $color-black;
+  }
+
+  &--size-base {
+    padding: 8px 20px;
+    height: 36px;
+    line-height: 34px;
+    @include font-size(14px, 16px);
+  }
+}
+
+
+/* TEXTAREA */
+.textarea {
+  @extend .input;
+
+  resize: none;
+  -webkit-appearance: none;
+
+  &.auto {
+    overflow-y: hidden;
+  }
+
+  &--fluid {
+    @extend .input--fluid;
+  }
+}
+
+.textarea-main {
+  @extend .input-main;
+  padding: 8px 20px;
+
+  &--size-auto {
+    @include font-size(14px, 16px);
+  }
+}
+
+
+
+/* SELECT */
+.select {
+	@extend .input;
+	& {cursor:pointer;}
+}
+

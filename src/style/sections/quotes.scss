@@ -1,0 +1,99 @@
+.section-quotes {
+  padding-top: 114px;
+  padding-bottom: 114px;
+  background: rgba($color-wood, 0.16);
+}
+
+.quotes-block {
+  position: relative;
+  width: 100%;
+  max-width: 928px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 26px;
+  padding-right: 26px;
+
+  &__slider {
+
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__text {
+    @include style-title-h1;
+    font-family: $font-serif;
+    font-style: italic;
+    color: $color-white;
+    cursor: default;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  &__dots {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 66px;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 26px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: $color-white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: $color-main;
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+      justify-content: flex-end;
+    }
+  }
+
+  &__arrow-icn {
+    width: 12px;
+    height: 20px;
+  }
+}
+
+
+.slider-dots {
+  width: 100%;
+  text-align: center;
+
+  .swiper-pagination-bullet {
+    background: $color-white;
+    width: 8px;
+    height: 8px;
+    margin: 0 6px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background 0.2s ease;
+
+    &:hover {
+      background: $color-main;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

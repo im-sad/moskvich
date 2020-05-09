@@ -1,0 +1,168 @@
+.footer {
+  padding: 48px 0;
+  background: $color-main;
+  overflow: hidden;
+
+  &__social {
+    margin-top: 24px;
+  }
+
+  // MEDIA
+  @include respond-to(desktop) {
+    padding: 36px 0 21px;
+
+    &__social {
+      margin-left: auto;
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.footer-table {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 934px;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  &__cell {
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 35%;
+  }
+
+  // MEDIA
+  @include respond-to(desktop) {
+    &__row {
+      flex-wrap: wrap;
+    }
+
+    &__cell {
+      max-width: 100%;
+      width: 100%;
+
+      &--books {
+        order: 0;
+        margin-bottom: 60px;
+      }
+
+      &--contacts {
+        order: 1;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      &--info {
+        order: 2;
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    &__cell {
+      width: 100%;
+
+      &--contacts {
+        display: block;
+      }
+    }
+  }
+}
+
+.footer-block {
+  &__title {
+    display: block;
+    @include style-title-h3;
+    margin-bottom: 20px;
+  }
+
+  @include respond-to(desktop) {
+    &__title {
+      width: 100%;
+
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+.footer-list {
+  &__item {
+    @include font-size(14px, 24px);
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-black;
+
+    &:hover {
+      color: $color-text;
+      text-decoration: underline;
+    }
+  }
+
+  @include respond-to(desktop) {
+    &--books &__item,
+    &--info &__item {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 14px;
+    }
+  }
+}
+
+
+.footer-soc {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &__item {
+    flex: 0 0 auto;
+    display: inline-block;
+    margin-right: 18px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    transition: opacity 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      color: $color-white;
+      opacity: 1;
+    }
+  }
+
+  &__icn {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+
+    &--whatsapp {
+      width: 19px;
+      height: 19px;
+    }
+  }
+}

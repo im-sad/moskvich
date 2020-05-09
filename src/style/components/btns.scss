@@ -1,0 +1,83 @@
+/* BTNS */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: $btn-line-heigh;
+  text-align: center;
+  transition: background 0.3s;
+  position: relative;
+  bottom: 0;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  max-width: 100%;
+  opacity: 1;
+  text-overflow: ellipsis;
+  user-select: none;
+
+
+  //state
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &:active {
+    bottom: -1px;
+  }
+}
+
+.btn-light {
+  @include font-size(10px, 18px);
+  background: $color-light;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: $color-text;
+  padding-left: 9px;
+  padding-right: 9px;
+  height: 20px;
+  line-height: 20px;
+  white-space: nowrap;
+  border-radius: 4px;
+
+  .parent-hover:hover &,
+  &:hover {
+    background: $color-influential;
+  }
+}
+
+
+.btn-main {
+  background: $color-main;
+  color: $color-black;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  outline: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 500;
+
+  &:hover {
+    background: $color-influential;
+    color: $color-black;
+  }
+
+  &:active {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.01);
+  }
+
+  &--size-base {
+    @include font-size(14px, 16px);
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 32px;
+  }
+
+  &--size-big {
+    height: 44px;
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+}

@@ -1,0 +1,40 @@
+.jumbo {
+  position: relative;
+  height: 420px;
+  background: $color-jumbo-bg;
+
+  &--main {
+    background: url('#{$img}/jumbo-main.jpg') no-repeat center center, linear-gradient(to bottom, #4e4443, #100e0f);
+    padding-top: 108px;
+    color: $color-white;
+    @include better-fonts;
+  }
+
+  &__text {
+    color: $color-white;
+    @include font-size(16px, 24px);
+    letter-spacing: 0.05em;
+
+    &--main {
+      max-width: 360px;
+    }
+  }
+}
+
+
+.main-title {
+  display: block;
+  font-weight: 400;
+
+  &__sub {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.905em;
+    @include font-size(16px, 26px);
+  }
+
+  &__name {
+    text-transform: uppercase;
+    @include font-size(46px, 72px);
+  }
+}

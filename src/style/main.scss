@@ -1,0 +1,48 @@
+// Base
+//@import "system/fonts";
+@import "system/reset";
+
+
+// Core
+@import "core/parts";
+@import "core/core";
+@import "core/header";
+@import "core/footer";
+
+// Elements
+@import "components/forms"; // эл-ты форм
+@import "components/btns"; // кнопки
+
+// Plugins
+@import "plugins/swiper";
+@import "plugins/modal";
+
+// Sections
+@import "sections/books";
+@import "sections/jumbo";
+@import "sections/features";
+@import "sections/cats";
+@import "sections/history";
+@import "sections/scenario";
+@import "sections/biography";
+@import "sections/quotes";
+@import "sections/popular";
+@import "sections/events";
+@import "sections/seo-text";
+
+// Blocks
+@import "blocks/burger";
+@import "blocks/header-menu";
+@import "blocks/book-el";
+@import "blocks/question-form";
+
+// Pages
+@import "pages/pages";
+@import "pages/index"; //главная
+
+// Helpres
+@import "components/assists"; //в конце, для большего приоритета
+
+
+//Other
+//@import "system/media";

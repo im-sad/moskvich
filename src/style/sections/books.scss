@@ -1,0 +1,61 @@
+.section-books {
+  padding-top: 48px;
+  padding-bottom: 28px;
+
+  &__title {
+    color: $color-white;
+  }
+}
+
+.books-slider {
+  position: relative;
+  padding-left: 12px + 40px;
+  padding-right: 12px + 40px;
+  margin-top: -20px;
+
+  &__core {
+    //
+  }
+
+  &__item {
+    padding-top: 20px;
+  }
+
+  &__dots {
+    position: static;
+    margin-top: 40px;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30px + 12px;
+    padding-top: 140px;
+    color: $color-white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-main;
+    }
+
+    &:active {
+      padding-top: 142px;
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+      text-align: right;
+    }
+  }
+
+  &__arrow-icn {
+    width: 12px;
+    height: 20px;
+  }
+}

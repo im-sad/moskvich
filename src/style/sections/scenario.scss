@@ -1,0 +1,99 @@
+.section-scenario {
+  background: $color-main;
+  overflow: hidden;
+}
+
+.scenario {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 884px;
+
+  &__figure {
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 151px;
+      height: 119px;
+      background: url('#{$img}/paper-1.png') no-repeat 0 0;
+      position: absolute;
+      left: -90px;
+      bottom: 125px;
+    }
+  }
+
+  &__img {
+    display: block;
+    flex: 0 0 auto;
+    user-select: none;
+  }
+
+  &__content {
+    position: relative;
+    max-width: 480px;
+
+    &::before {
+      content: '';
+      background: url('#{$img}/paper-2.png') no-repeat 0 0;
+      width: 267px;
+      height: 176px;
+      position: absolute;
+      left: calc(100% - 65px);
+      top: calc(100% - 78px);
+      z-index: 2;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    color: $color-white;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    text-shadow: 1px 1px 0 rgba($color-black, 0.2);
+    @include better-fonts;
+    @include font-size(30px, 46px);
+    padding: 27px 80px 21px 91px;
+    letter-spacing: 0.02em;
+    transition: all 1s ease;
+    background: $color-dark-sky;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      z-index: 2;
+      display: block;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, rgba($color-white, 0) 0%, rgba($color-white, 0.3) 100%);
+      transform: skewX(-25deg);
+      opacity: 0.8;
+    }
+
+
+    &:hover {
+      color: $color-white;
+      text-decoration: none;
+      transform: scale(1.01);
+
+      &::before {
+        animation: shine 0.75s;
+      }
+    }
+  }
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}

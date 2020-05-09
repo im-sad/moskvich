@@ -1,0 +1,62 @@
+// MIXINS
+@mixin font-size($fontSize, $fontInterliase) {
+  font-size: $fontSize;
+  line-height: $fontInterliase / $fontSize;
+}
+
+@mixin line-height($fontSize, $fontInterliase) {
+  line-height: $fontInterliase / $fontSize;
+}
+
+@mixin better-fonts() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+// STYLES
+@mixin style-more-link () {
+  font-style: italic;
+  color: $color-muted;
+  font-family: $font-serif;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+@mixin style-title-h1() {
+  @include font-size(36px, 60px);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+@mixin style-title-h2() {
+  @include font-size(30px, 40px);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+@mixin style-title-h3() {
+  @include font-size(18px, 30px);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+@mixin style-text-base {
+  @include font-size(16px, 24px);
+  font-family: $font-serif;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+
+
+// No
+%no-wrap {white-space:nowrap;}
+%no-outline {outline:none !important;}
+%no-select {user-select: none;}
+%no-events {pointer-events:none;}
+%no-decoration {text-decoration:none !important;}

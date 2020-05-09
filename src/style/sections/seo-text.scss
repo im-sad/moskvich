@@ -1,0 +1,17 @@
+.section-seo {
+  background: $color-white;
+  padding-top: 72px;
+  padding-bottom: 72px;
+
+  &__title {
+    margin-bottom: 32px;
+  }
+
+  &__text {
+    text-indent: 1.5em;
+    font-weight: 300;
+    @include font-size(16px, 32px);
+    font-family: $font-serif;
+    letter-spacing: 0.03em;
+  }
+}
