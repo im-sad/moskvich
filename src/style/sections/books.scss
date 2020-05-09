@@ -9,8 +9,8 @@
 
 .books-slider {
   position: relative;
-  padding-left: 12px + 40px;
-  padding-right: 12px + 40px;
+  padding-left: 12px + 30px;
+  padding-right: 12px + 30px;
   margin-top: -20px;
 
   &__core {
@@ -44,6 +44,11 @@
       padding-top: 142px;
     }
 
+    &.swiper-button-disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
     &--prev {
       left: 0;
     }
@@ -57,5 +62,23 @@
   &__arrow-icn {
     width: 12px;
     height: 20px;
+  }
+
+  // MEDIA
+  @include respond-to(slider-brake) {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: -24px;
+    margin-right: -24px;
+
+    &__arrow {
+      display: none;
+    }
+
+    &__item {
+      width: 176px !important;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 }

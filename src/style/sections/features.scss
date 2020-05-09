@@ -1,12 +1,10 @@
 .section-features {
   background: rgba($color-wood, 0.3);
-  padding: 18px 0;
+  padding: (18px + 36px) 0;
   @include better-fonts;
 
-  &__width {
-    max-width: 1144px;
-    margin-left: auto;
-    margin-right: auto;
+  @include respond-to(tablet) {
+    padding: 32px 0;
   }
 }
 
@@ -26,7 +24,6 @@
     height: 100%;
     color: $color-white;
     text-align: center;
-    padding: 36px 0 48px;
   }
 
   &__figure {
@@ -58,5 +55,61 @@
     font-weight: 300;
     padding-left: 14px;
     padding-right: 14px;
+  }
+
+  // MEDIA
+  @include respond-to(2k) {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+
+  @include respond-to(desktop-wide) {
+    margin-left: -6px;
+    margin-right: -6px;
+
+    &__item {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  }
+
+  @include respond-to(tablet-wide) {
+    flex-wrap: wrap;
+    margin-bottom: -32px;
+
+    &__item {
+      width: 50%;
+      margin-bottom: 32px;
+    }
+
+
+    &__title {
+      margin-bottom: 8px;
+    }
+
+    &__text {
+      @include font-size(12px, 18px);
+    }
+  }
+
+  @include respond-to(tablet) {
+    margin-bottom: -24px;
+
+    &__item {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    &__figure {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 4px;
+    }
+
+    &__title {
+      br {
+        display: none;
+      }
+    }
   }
 }

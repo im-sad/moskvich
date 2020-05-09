@@ -18,12 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
   })();
 
 
-  // Menu
-  document.getElementById('js-burger').addEventListener('click', function() {
-    this.classList.toggle('has-active');
-    document.getElementById('header-menu').classList.toggle('is-visible');
-    document.body.classList.toggle('hidden-scroll');
-  });
+  // Menu burger
+  (function() {
+    document.getElementById('js-burger').addEventListener('click', function() {
+      this.classList.toggle('has-active');
+      document.getElementById('header-menu').classList.toggle('is-visible');
+      document.body.classList.toggle('hidden-scroll');
+    });
+  })();
 
 
   // Menu sublinks
@@ -99,9 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!booksSlider) return;
 
     new Swiper (booksSlider, {
-      loop: true,
+      loop: false,
       autoHeight: true,
-      slidesPerView: 5,
+      slidesPerView: 'auto',
+      freeMode: true,
 
       pagination: {
         el: '.books-slider__dots',
@@ -110,6 +113,12 @@ document.addEventListener('DOMContentLoaded', function() {
       navigation: {
         nextEl: '.books-slider__arrow--next',
         prevEl: '.books-slider__arrow--prev',
+      },
+      breakpoints: {
+        1221: {
+          freeMode: false,
+          slidesPerView: 5
+        }
       }
     });
   })();

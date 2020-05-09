@@ -1,7 +1,6 @@
 // Base
-//@import "system/fonts";
+@import "system/fonts";
 @import "system/reset";
-
 
 // Core
 @import "core/parts";
@@ -35,6 +34,7 @@
 @import "blocks/header-menu";
 @import "blocks/book-el";
 @import "blocks/question-form";
+@import "blocks/slider-dots";
 
 // Pages
 @import "pages/pages";

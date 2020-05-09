@@ -14,4 +14,20 @@
     font-family: $font-serif;
     letter-spacing: 0.03em;
   }
+
+
+  @include respond-to(tablet-wide) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    &__title {
+      text-align: center;
+      @include font-size(23px, 32px);
+      margin-bottom: 16px;
+    }
+
+    &__text {
+      @include font-size(14px, 24px);
+    }
+  }
 }

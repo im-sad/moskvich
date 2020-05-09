@@ -9,6 +9,7 @@
 }
 
 .biography {
+  //
 
   &__book {
     position: relative;
@@ -78,6 +79,7 @@
     @include style-more-link;
   }
 
+
   // MEDIA
   @include respond-to(desktop-wide) {
     padding-top: 72px;
@@ -86,13 +88,34 @@
       width: 940px;
       height: 705px;
       background-size: cover;
+      right: 0;
+      padding-top: 74px;
+    }
+
+    &__photo {
+      max-width: 255px;
+    }
+
+    &__name {
+      margin-top: 24px;
+    }
+
+    &__right-side {
+      padding-left: 0;
+      padding-right: 170px;
     }
   }
 
   @include respond-to(desktop) {
+    padding: 0;
+
     &__book {
       background: none;
+      width: auto;
+      height: auto;
       color: $color-white;
+      padding: 0;
+      @include better-fonts;
     }
 
     &__left-side {
@@ -108,6 +131,24 @@
     &__title {
       text-align: center;
       margin-bottom: 12px;
+    }
+
+    &__more {
+      color: $color-white;
+    }
+  }
+
+  @include respond-to(mobile) {
+    &__title {
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      margin-bottom: 12px;
+    }
+
+    &__text {
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      @include font-size(14px, 24px);
     }
   }
 }

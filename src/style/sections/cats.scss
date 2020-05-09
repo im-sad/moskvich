@@ -1,17 +1,15 @@
 .section-cats {
   padding-top: 48px;
   padding-bottom: 58px;
-  padding-left: 78px - 16px;
-  padding-right: 78px - 16px;
 
   &__title {
     color: $color-white;
-    margin-bottom: 52px;
+    margin-bottom: 48px;
   }
 
-  @include respond-to(desktop-wide) {
-    padding-left: 0;
-    padding-right: 0;
+  @include respond-to(tablet-wide) {
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 }
 
@@ -88,13 +86,49 @@
     background: $color-influential;
   }
 
-  @include respond-to(desktop) {
+  @include respond-to(desktop-wide) {
+    &__list {
+      margin-left: -8px;
+      margin-right: -8px;
+    }
+
+    &__item {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    &__title {
+      height: 48px;
+      @include font-size(14px, 22px);
+    }
+  }
+
+  @include respond-to(tablet-wide) {
     &__list {
       flex-wrap: wrap;
+      margin-bottom: -24px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 650px;
     }
 
     &__item {
       width: 50%;
+      margin-bottom: 24px;
+    }
+  }
+
+  @include respond-to(mobile) {
+    &__list {
+      max-width: 300px;
+    }
+
+    &__item {
+      width: 100%;
+    }
+
+    &__title {
+      @include font-size(18px, 30px);
     }
   }
 }

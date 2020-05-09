@@ -1,8 +1,4 @@
-
-// ЭЛ-ТЫ ФОРМ
-
-
-/* ANY FIELD */
+/* FORMS */
 .field {
   display: block;
 
@@ -12,16 +8,12 @@
   }
 }
 
-
-
-/* INPUT */
 .input {
   box-sizing: border-box;
   transition: border 0.3s, box-shadow 0.3s;
   outline: none !important;
   line-height: $form-line-height;
   vertical-align: middle;
-
 
   &--fluid {
     width: 100%;
@@ -80,12 +72,3 @@
     @include font-size(14px, 16px);
   }
 }
-
-
-
-/* SELECT */
-.select {
-	@extend .input;
-	& {cursor:pointer;}
-}
-

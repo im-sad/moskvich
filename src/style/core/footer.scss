@@ -9,11 +9,17 @@
 
   // MEDIA
   @include respond-to(desktop) {
-    padding: 36px 0 21px;
+    padding: 36px 0;
 
     &__social {
       margin-left: auto;
       flex: 0 0 auto;
+    }
+  }
+
+  @include respond-to(tablet) {
+    &__social {
+      margin-top: 8px;
     }
   }
 }
@@ -49,12 +55,12 @@
 
       &--books {
         order: 0;
-        margin-bottom: 60px;
+        margin-bottom: 36px;
       }
 
       &--contacts {
         order: 1;
-        margin-bottom: 40px;
+        margin-bottom: 36px;
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
@@ -121,7 +127,6 @@
     }
   }
 }
-
 
 .footer-soc {
   display: inline-flex;

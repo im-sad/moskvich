@@ -39,6 +39,33 @@
     vertical-align: top;
     max-width: 550px;
   }
+
+  @include respond-to(tablet-wide) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before,
+    &::after {
+      width: 100%;
+      flex: 1 1 auto;
+      position: static;
+    }
+
+    &__inside {
+      flex: 0 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      background: none;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  @include respond-to(tablet) {
+    @include font-size(18px, 24px);
+    margin-bottom: 24px;
+  }
 }
 
 .title-h2 {

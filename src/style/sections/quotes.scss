@@ -2,6 +2,10 @@
   padding-top: 114px;
   padding-bottom: 114px;
   background: rgba($color-wood, 0.16);
+
+  @include respond-to(desktop) {
+    padding: 40px 0;
+  }
 }
 
 .quotes-block {
@@ -14,7 +18,7 @@
   padding-right: 26px;
 
   &__slider {
-
+    //
   }
 
   &__item {
@@ -68,32 +72,17 @@
     width: 12px;
     height: 20px;
   }
-}
 
-
-.slider-dots {
-  width: 100%;
-  text-align: center;
-
-  .swiper-pagination-bullet {
-    background: $color-white;
-    width: 8px;
-    height: 8px;
-    margin: 0 6px;
-    display: inline-block;
-    vertical-align: top;
-    border-radius: 50%;
-    opacity: 1;
-    cursor: pointer;
-    transition: opacity 0.2s ease, background 0.2s ease;
-
-    &:hover {
-      background: $color-main;
+  // MEDIA
+  @include respond-to(desktop) {
+    &__text {
+      @include style-title-h2;
     }
   }
 
-  .swiper-pagination-bullet-active {
-    opacity: 0.5;
-    pointer-events: none;
+  @include respond-to(tablet) {
+    &__text {
+      @include style-title-h3;
+    }
   }
 }

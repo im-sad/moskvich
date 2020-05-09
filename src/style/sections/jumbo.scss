@@ -1,40 +1,85 @@
-.jumbo {
+// MAIN JUMBO
+.jumbo-main {
   position: relative;
   height: 420px;
-  background: $color-jumbo-bg;
-
-  &--main {
-    background: url('#{$img}/jumbo-main.jpg') no-repeat center center, linear-gradient(to bottom, #4e4443, #100e0f);
-    padding-top: 108px;
-    color: $color-white;
-    @include better-fonts;
+  background: url('#{$img}/jumbo-main.jpg') no-repeat center center, linear-gradient(to bottom, #4e4443, #100e0f);
+  padding-top: 108px;
+  color: $color-white;
+  @include better-fonts;
+ 
+  &__title {
+    display: block;
+    font-weight: 400;
   }
 
-  &__text {
-    color: $color-white;
-    @include font-size(16px, 24px);
-    letter-spacing: 0.05em;
-
-    &--main {
-      max-width: 360px;
-    }
-  }
-}
-
-
-.main-title {
-  display: block;
-  font-weight: 400;
-
-  &__sub {
+  &__title-sub {
     display: block;
     text-transform: uppercase;
     letter-spacing: 0.905em;
     @include font-size(16px, 26px);
   }
 
-  &__name {
+  &__title-name {
     text-transform: uppercase;
     @include font-size(46px, 72px);
+  }
+
+  &__text {
+    color: $color-white;
+    @include font-size(16px, 24px);
+    letter-spacing: 0.05em;
+    max-width: 360px;
+  }
+
+
+  // MAIN
+  @include respond-to(4k) {
+    background-position: right center, 0 0;
+  }
+
+  @include respond-to(desktop-wide) {
+    background-position: right -250px center, 0 0;
+  }
+
+  @include respond-to(tablet-wide) {
+    display: flex;
+    align-items: center;
+    height: 224px;
+    padding-top: 0;
+    background-size: cover;
+    background-position: 0 0;
+
+    &__title-sub {
+      @include font-size(12px, 16px);
+      letter-spacing: 0.7em;
+      margin-bottom: 4px;
+    }
+
+    &__title-name {
+      @include font-size(23px, 32px);
+      margin-bottom: 4px;
+
+      b {
+        font-weight: 400;
+      }
+    }
+
+    &__text {
+      @include font-size(12px, 18px);
+      font-weight: 300;
+    }
+  }
+
+  @include respond-to(tablet) {
+    align-items: flex-start;
+    padding-top: 24px;
+    background-position: right -150px center;
+    background-size: auto 100%;
+    padding-right: 50px;
+  }
+
+  @include respond-to(mobile) {
+    background: url('#{$img}/jumbo-main-mob.jpg') no-repeat 0 0;
+    padding-right: 0;
   }
 }

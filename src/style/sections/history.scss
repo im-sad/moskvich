@@ -7,6 +7,11 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  @include respond-to(tablet-wide) {
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
 }
 
 .history {
@@ -16,12 +21,11 @@
 
   &__figure {
     position: relative;
-    margin-right: 100px;
+    margin-right: 64px;
   }
 
   &__img {
-    min-width: 486px;
-    max-width: 100%;
+    width: 480px;
     display: inline-block;
     vertical-align: top;
   }
@@ -46,5 +50,43 @@
     display: inline-block;
     margin-top: 22px;
     @include style-more-link;
+  }
+
+  // MEDIA
+  @include respond-to(desktop-wide) {
+    &__img {
+      width: 416px;
+    }
+  }
+
+  @include respond-to(desktop) {
+    &__figure {
+      margin-right: 40px;
+    }
+  }
+
+  @include respond-to(tablet-wide) {
+    flex-wrap: wrap;
+
+    &__figure {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 32px;
+    }
+
+    &__img {
+      max-width: 480px;
+      width: 100%;
+    }
+
+    &__title {
+      margin-bottom: 16px;
+      text-align: center;
+      @include font-size(23px, 32px);
+    }
+
+    &__text {
+      width: 100%;
+    }
   }
 }

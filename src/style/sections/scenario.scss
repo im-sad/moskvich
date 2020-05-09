@@ -1,6 +1,10 @@
 .section-scenario {
   background: $color-main;
   overflow: hidden;
+
+  @include respond-to(tablet-wide) {
+    padding-bottom: 48px;
+  }
 }
 
 .scenario {
@@ -28,6 +32,7 @@
 
   &__img {
     display: block;
+    width: 100%;
     flex: 0 0 auto;
     user-select: none;
   }
@@ -88,6 +93,62 @@
       &::before {
         animation: shine 0.75s;
       }
+    }
+  }
+
+  @include respond-to(desktop-wide) {
+    &__link {
+      padding-left: 74px;
+    }
+  }
+
+  @include respond-to(desktop) {
+    &__link {
+      @include font-size(18px, 30px);
+      // padding-left: 24px;
+      max-width: 340px;
+    }
+  }
+
+  @include respond-to(tablet-wide) {
+    flex-direction: column;
+
+    &__figure {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 300px;
+      margin-bottom: 30px;
+
+      &::before {
+        bottom: -20px;
+        z-index: 2;
+      }
+    }
+
+    &__content {
+      &::before {
+        background-size: cover;
+        width: 200px;
+        height: 132px;
+        top: calc(100% - 90px);
+      }
+    }
+
+    &__link {
+      @include font-size(18px, 26px);
+    }
+  }
+
+  @include respond-to(mobile) {
+    &__content {
+      &::before {
+        left: calc(100% - 33px);
+        top: calc(100% - 50px);
+      }
+    }
+
+    &__link {
+      padding: 21px 24px;
     }
   }
 }
