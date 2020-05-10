@@ -6,10 +6,11 @@
   padding-top: 108px;
   color: $color-white;
   @include better-fonts;
- 
+
   &__title {
     display: block;
     font-weight: 400;
+    cursor: default;
   }
 
   &__title-sub {
@@ -29,10 +30,10 @@
     @include font-size(16px, 24px);
     letter-spacing: 0.05em;
     max-width: 360px;
+    cursor: default;
   }
 
 
-  // MAIN
   @include respond-to(4k) {
     background-position: right center, 0 0;
   }
@@ -81,5 +82,104 @@
   @include respond-to(mobile) {
     background: url('#{$img}/jumbo-main-mob.jpg') no-repeat 0 0;
     padding-right: 0;
+  }
+}
+
+
+// KIDS
+.jumbo-kids {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  padding-bottom: 12px;
+  height: 420px;
+  background: url('#{$img}/jumbo-kids.jpg') no-repeat center center, linear-gradient(to bottom, #2d1006, #000, #151410);
+  text-align: center;
+
+  &__title {
+    @include font-size(46px, 72px);
+    color: $color-white;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: default;
+  }
+
+
+  @include respond-to(tablet-wide) {
+    padding-bottom: 8px;
+    height: 228px;
+    background-size: auto 100%;
+
+    &__title {
+      @include font-size(23px, 32px);
+    }
+  }
+
+  @include respond-to(mobile) {
+    background-image: url('#{$img}/jumbo-kids-mob.jpg');
+  }
+}
+
+
+// GIFT
+.jumbo-gift {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: $color-white url('#{$img}/jumbo-gift.jpg') no-repeat left  center;
+  height: 420px;
+  padding-left: 500px;
+
+  &__title {
+    @include font-size(46px, 72px);
+    color: $color-text;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: default;
+  }
+
+  &__text {
+    max-width: 440px;
+    @include font-size(16px, 24px);
+  }
+
+  @include respond-to(desktop) {
+    height: 314px;
+    background-size: contain;
+    padding-left: 380px;
+  }
+
+  @include respond-to(tablet-wide) {
+    background-position: left -100px center;
+    padding-left: 260px;
+
+    &__title {
+      @include font-size(23px, 32px);
+      margin-bottom: 24px;
+    }
+  }
+
+  @include respond-to(tablet) {
+    height: 120px;
+    padding-left: 0;
+    padding-right: 100px;
+    background: $color-white url('#{$img}/jumbo-gift-mob.jpg') no-repeat right center;
+
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__text {
+      display: none;
+    }
+  }
+
+  @include respond-to(mobile) {
+    &__title-bold {
+      display: block;
+    }
   }
 }

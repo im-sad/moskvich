@@ -45,6 +45,7 @@
 
   .parent-hover:hover &,
   &:hover {
+    color: $color-text;
     background: $color-influential;
   }
 }

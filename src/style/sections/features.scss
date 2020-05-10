@@ -35,7 +35,13 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
+    transition: transform 0.5s ease;
   }
+
+  &__block:hover &__figure {
+    transform: scale(1.2);
+  }
+
 
   &__icn {
     flex: 0 0 auto;
@@ -47,14 +53,16 @@
     @include style-title-h3;
     display: block;
     margin-bottom: 14px;
+    cursor: default;
   }
 
   &__text {
-    @include font-size(14px, 20px);
+    @include font-size(14px, 22px);
     letter-spacing: 0.01em;
     font-weight: 300;
     padding-left: 14px;
     padding-right: 14px;
+    cursor: default;
   }
 
   // MEDIA

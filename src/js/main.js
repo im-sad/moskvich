@@ -6,10 +6,26 @@
 document.addEventListener('DOMContentLoaded', function() {
   'use strict';
 
+  // Gifts active blocks
+  (function() {
+      const giftsBlockList = document.getElementsByClassName('gift-block');
+
+      for (let i = 0; i < giftsBlockList.length; i++) {
+        giftsBlockList[i].addEventListener('mouseenter', function() {
+          for (let j = 0; j < giftsBlockList.length; j++) {
+            giftsBlockList[j].classList.remove('has-active');
+          }
+          this.classList.add('has-active');
+        });
+      }
+  })();
+
   // Phone mask
   (function() {
     const phoneMask = ['+', '7', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
     const myInput = document.querySelector('.js-tel');
+
+    if (!myInput) return;
 
     vanillaTextMask.maskInput({
       inputElement: myInput,

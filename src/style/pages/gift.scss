@@ -1,0 +1,124 @@
+.gifts-page {
+  padding: 60px 0;
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+
+  &__list-item {
+    width: calc(100% / 3);
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include respond-to(slider-brake) {
+    &__list {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    &__list-item {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  @include respond-to(desktop-wide) {
+    &__list {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__list-item {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @include respond-to(tablet-wide) {
+    &__list {
+      display: block;
+    }
+
+    &__list-item {
+      width: 100%;
+    }
+  }
+}
+
+
+
+.gift-block {
+  position: relative;
+  background: $color-paper;
+  padding: 12px 36px 28px;
+  text-align: center;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.01);
+  will-change: transform;
+
+  &:hover {
+    box-shadow: 0 0 0 5px $color-main;
+  }
+
+  &__title {
+    display: block;
+    @include font-size(23px, 32px);
+    font-weight: 400;
+    border-bottom: 2px solid rgba($color-lines, 0.5);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    cursor: default;
+  }
+
+  &__body {
+    padding-bottom: 16px;
+  }
+
+  &__cover {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 264px;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__info {
+    margin-bottom: 12px;
+    @include font-size(12px, 18px);
+    letter-spacing: 0.01em;
+  }
+
+  &__footer {
+    border-top: 2px solid rgba($color-lines, 0.5);
+    padding-top: 12px;
+  }
+
+  &__price {
+    display: block;
+    @include font-size(18px, 32px);
+    font-weight: 700;
+    margin-bottom: 4px;
+    cursor: default;
+    letter-spacing: 0.05em;
+  }
+
+  // MEDIA
+  @include respond-to(desktop-wide) {
+    padding: 12px 10px 28px;
+    box-shadow: 0 0 0 0 $color-paper, 0 0 80px rgba(0, 0, 0, 0.01);
+    transition: box-shadow 0.5s ease;
+
+    &.has-active {
+      z-index: 5;
+      box-shadow: 0 0 0 30px $color-paper, 0 0 80px rgba(0, 0, 0, 0.8);
+    }
+  }
+}
