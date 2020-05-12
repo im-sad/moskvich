@@ -26,6 +26,17 @@
     text-align: center;
   }
 
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $color-white;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+
   &__figure {
     width: 66px;
     height: 66px;
@@ -35,7 +46,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
   }
 
   &__block:hover &__figure {
@@ -53,7 +64,11 @@
     @include style-title-h3;
     display: block;
     margin-bottom: 14px;
-    cursor: default;
+    color: $color-main;
+  }
+
+  &__link:hover &__title {
+    text-decoration: underline;
   }
 
   &__text {
@@ -62,7 +77,6 @@
     font-weight: 300;
     padding-left: 14px;
     padding-right: 14px;
-    cursor: default;
   }
 
   // MEDIA
