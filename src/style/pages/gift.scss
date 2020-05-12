@@ -45,7 +45,28 @@
     }
 
     &__list-item {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 420px;
       width: 100%;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $color-lines;
+
+      &:last-child {
+        margin-bottom: 0;
+        border-bottom: 1px solid #000;
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    padding-top: 32px;
+    padding-bottom: 24px;
+  }
+
+  @include respond-to(mobile) {
+    &__list-item {
+      margin-bottom: 0;
     }
   }
 }
@@ -57,12 +78,12 @@
   background: $color-paper;
   padding: 12px 36px 28px;
   text-align: center;
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.01);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 0 $color-paper, 0 0 0 0 rgba($color-black, 0.01);
   will-change: transform;
 
   &:hover {
-    box-shadow: 0 0 0 5px $color-main;
+    box-shadow: 0 0 0 10px $color-paper, 0 0 50px 10px rgba($color-black, 0.8);
   }
 
   &__title {
@@ -92,6 +113,7 @@
 
   &__info {
     margin-bottom: 12px;
+    flex: 0 0 auto;
     @include font-size(12px, 18px);
     letter-spacing: 0.01em;
   }
@@ -118,7 +140,66 @@
 
     &.has-active {
       z-index: 5;
-      box-shadow: 0 0 0 30px $color-paper, 0 0 80px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 0 10px $color-paper, 0 0 50px 10px rgba($color-black, 0.8);
+    }
+  }
+
+  @include respond-to(tablet-wide) {
+    padding: 24px 16px 28px;
+
+    &.has-active {
+      z-index: 5;
+      box-shadow: none;
+    }
+  }
+
+  @include respond-to(mobile) {
+    &__body {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 8px;
+      padding-bottom: 0;
+    }
+
+    &__cover {
+      order: 0;
+      flex: 0 0 auto;
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      border-bottom: none;
+      margin-bottom: 12px;
+      padding-bottom: 0;
+      order: 1;
+      @include font-size(16px, 24px);
+    }
+
+    &__info {
+      order: 2;
+      margin-bottom: 12px;
+    }
+
+    &__about {
+      order: 3;
+    }
+
+    &__footer {
+      padding-top: 0;
+      border-top: none;
+    }
+
+    &__price {
+      margin-bottom: 8px;
+    }
+
+    &__buy {
+      height: 32px;
+      padding-left: 26px;
+      padding-right: 26px;
+      @include font-size(12px, 18px);
     }
   }
 }
