@@ -1,10 +1,7 @@
 .section-scenario {
+  position: relative;
   background: $color-main;
   overflow: hidden;
-
-  @include respond-to(tablet-wide) {
-    padding-bottom: 48px;
-  }
 }
 
 .scenario {
@@ -12,9 +9,10 @@
   justify-content: flex-start;
   align-items: center;
   align-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 884px;
+  left: calc(50% - 40px);
+  transform: translateX(-50%);
+  width: 884px;
+  position: relative;
 
   &__figure {
     position: relative;
@@ -25,7 +23,7 @@
       height: 119px;
       background: url('#{$img}/paper-1.png') no-repeat 0 0;
       position: absolute;
-      left: -90px;
+      left: -105px;
       bottom: 125px;
     }
   }
@@ -47,14 +45,19 @@
       width: 267px;
       height: 176px;
       position: absolute;
-      left: calc(100% - 65px);
-      top: calc(100% - 78px);
+      left: calc(100% - 48px);
+      top: calc(100% - 73px);
       z-index: 2;
     }
   }
 
   &__link {
-    display: inline-block;
+    height: 192px;
+    width: 100%;
+    max-width: 480px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     vertical-align: top;
     color: $color-white;
     text-decoration: none;
@@ -62,99 +65,97 @@
     user-select: none;
     text-shadow: 1px 1px 0 rgba($color-black, 0.2);
     @include better-fonts;
-    @include font-size(30px, 46px);
-    padding: 27px 80px 21px 91px;
-    letter-spacing: 0.02em;
-    transition: all 1s ease;
+    @include font-size(23px, 32px);
+    padding-left: 124px;
+    padding-right: 120px;
+    letter-spacing: 0.03em;
+    transition: transform 1s ease, box-shadow 1s ease;
     background: $color-dark-sky;
     overflow: hidden;
     position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -75%;
-      z-index: 2;
-      display: block;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(to right, rgba($color-white, 0) 0%, rgba($color-white, 0.3) 100%);
-      transform: skewX(-25deg);
-      opacity: 0.8;
-    }
-
+    box-shadow: 0 0 0 rgba($color-black, 0.01s);
+    font-weight: 400;
+    margin-top: -35px;
 
     &:hover {
       color: $color-white;
       text-decoration: none;
-      transform: scale(1.01);
-
-      &::before {
-        animation: shine 0.75s;
-      }
+      transform: scale(1.01) translateY(-8px);
+      box-shadow: 4px 10px 30px rgba($color-black, 0.5);
     }
   }
 
-  @include respond-to(desktop-wide) {
-    &__link {
-      padding-left: 74px;
-    }
-  }
-
-  @include respond-to(desktop) {
-    &__link {
-      @include font-size(18px, 30px);
-      // padding-left: 24px;
-      max-width: 340px;
-    }
-  }
-
-  @include respond-to(tablet-wide) {
-    flex-direction: column;
+  // MEDIA
+  @include respond-to(tablet-medium) {
+    width: auto;
+    max-width: 100%;
+    display: block;
+    position: static;
+    transform: none;
+    padding-bottom: 37px;
 
     &__figure {
+      max-width: 300px;
+      margin-bottom: 31px;
       margin-left: auto;
       margin-right: auto;
-      max-width: 300px;
-      margin-bottom: 30px;
 
       &::before {
-        bottom: -20px;
-        z-index: 2;
-      }
-    }
-
-    &__content {
-      &::before {
+        width: 126px;
+        height: 99px;
         background-size: cover;
-        width: 200px;
-        height: 132px;
-        top: calc(100% - 90px);
+        bottom: -12px;
+        left: -58px;
       }
     }
 
-    &__link {
-      @include font-size(18px, 26px);
-    }
-  }
-
-  @include respond-to(mobile) {
     &__content {
+      max-width: 100%;
+      padding-left: (44px - 24px);
+      padding-right: (44px - 24px);
+
       &::before {
-        left: calc(100% - 33px);
-        top: calc(100% - 50px);
+        content: none;
       }
     }
 
     &__link {
-      padding: 21px 24px;
+      text-align: center;
+      padding: 21px;
+      padding-bottom: 21px;
+      max-width: 100%;
+      height: auto;
+      margin-top: 0;
+      @include font-size(18px, 26px);
+      overflow: visible;
+    }
+
+    &__link-inside {
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      text-align: left;
+      max-width: 300px;
+
+      &::before {
+        content: '';
+        width: 199px;
+        height: 131px;
+        position: absolute;
+        z-index: 2;
+        left: calc(100% - 70px);
+        bottom: -54px;
+        background: url('#{$img}/paper-2.png') no-repeat 0 0;
+        background-size: cover;
+        transform: scaleX(-1) rotate(180deg);
+      }
     }
   }
-}
 
-@keyframes shine {
-  100% {
-    left: 125%;
+  @include respond-to(mobile-wide) {
+    &__content {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
