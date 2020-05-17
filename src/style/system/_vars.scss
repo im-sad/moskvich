@@ -1,5 +1,6 @@
 // Base
 $w: 1120px;
+$w-large: 1280px;
 $bg: #56381C;
 $img: '../img';
 $fonts: '../fonts';
@@ -53,7 +54,6 @@ $h6: 1.8rem;
 // Paddings
 $padd-xs: 1rem;
 $padd-sm: 2rem;
-$padd-md: 3rem;
 $padd-lg: 4rem;
 $padd-xl: 5rem;
 
@@ -64,6 +64,7 @@ $media-slider-brake: 1220px;
 $media-desktop-wide: 1100px;
 $media-desktop: 960px;
 $media-tablet-wide: 840px;
+$media-tablet-medium: 675px;
 $media-tablet: 620px;
 $media-mobile-wide: 540px;
 $media-mobile: 420px;
@@ -88,6 +89,9 @@ $media-phone: 320px;
   }
   @else if $media == tablet-wide {
     @media only screen and (max-width: $media-tablet-wide + 1) { @content; }
+  }
+  @else if $media == tablet-medium {
+    @media only screen and (max-width: $media-tablet-medium + 1) { @content; }
   }
   @else if $media == tablet {
     @media only screen and (max-width: $media-tablet + 1) { @content; }

@@ -1,0 +1,53 @@
+.pag {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  user-select: none;
+
+  &__item {
+    border: 1px solid transparent;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+    line-height: 42px;
+    color: $color-black;
+    font-size: 14px;
+    transition: color 0.2s ease, border 0.2s ease;
+
+    &:hover,
+    &:active {
+      border-color: $color-main;
+      color: $color-main;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &--active {
+      cursor: default;
+      pointer-events: none;
+      border-color: $color-border;
+    }
+  }
+
+
+  @include respond-to(mobile-wide) {
+    &__link {
+      font-size: 9px;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+    }
+  }
+}

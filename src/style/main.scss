@@ -28,6 +28,7 @@
 @import "sections/popular";
 @import "sections/events";
 @import "sections/seo-text";
+@import "sections/article";
 
 // Blocks
 @import "blocks/burger";
@@ -35,6 +36,8 @@
 @import "blocks/book-el";
 @import "blocks/question-form";
 @import "blocks/slider-dots";
+@import "blocks/breadcrumbs";
+@import "blocks/pag";
 
 // Pages
 @import "pages/index";

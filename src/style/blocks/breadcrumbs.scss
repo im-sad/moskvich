@@ -1,0 +1,45 @@
+.breadcrumbs {
+  //
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    @include font-size(10px, 16px);
+    margin-right: 4px;
+
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link,
+  &__span {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-text;
+    padding-right: 4px + 10px; // bg width
+    background: url('#{$img}/sep.svg') no-repeat right center;
+
+    &:hover {
+      color: $color-main;
+      text-decoration: none;
+    }
+  }
+
+  &__span {
+    color: rgba($color-text, 0.5);
+    cursor: default;
+  }
+}
