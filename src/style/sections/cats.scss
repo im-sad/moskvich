@@ -121,6 +121,7 @@
   }
 
   &__title {
+    box-sizing: border-box;
     height: 58px;
     display: flex;
     justify-content: center;

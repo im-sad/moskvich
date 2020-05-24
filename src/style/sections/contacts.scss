@@ -38,6 +38,7 @@
 
   @include respond-to(desktop) {
     flex-wrap: wrap;
+    padding-bottom: 40px;
 
     &__map {
       order: 2;

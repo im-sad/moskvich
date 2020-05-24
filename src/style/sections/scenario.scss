@@ -88,10 +88,11 @@
     &:hover {
       color: $color-white;
       text-decoration: none;
-      transform: scale(1.01) translateY(-8px);
+      transform: translateY(-8px);
       box-shadow: 4px 10px 30px rgba($color-black, 0.5);
     }
   }
+
 
   // MEDIA
   @include respond-to(tablet-medium) {
