@@ -12,13 +12,34 @@ html {font-size:$font-base;-webkit-tap-highlight-color:transparent;-webkit-backf
 body {
   font: #{$font-size}/#{$line-height} $font;
   text-align: left;
-  background: $bg url('#{$img}/bg.webp') repeat 0 0;
+  background: $bg url('#{$img}/bg.jpg') repeat 0 0;
+  background-attachment: fixed;
+  background-size: 2000px 2000px;
   color: $color-text;
   letter-spacing: 0.01em;
+
+  @include respond-to(2k) {
+    background-image: url('#{$img}/bg-desktop.jpg');
+    background-size: 1000px 1000px;
+  }
+
+  @include respond-to(desktop) {
+    background-image: url('#{$img}/bg-mob.jpg');
+    background-size: 500px 500px;
+  }
 }
 
-html:not(.webp) body {
-  background-image: url('#{$img}/bg.jpg');
+.webp body {
+  background-image: url('#{$img}/bg.webp');
+
+  @include respond-to(2k) {
+    background-image: url('#{$img}/bg-desktop.webp');
+    background-size: 1000px 1000px;
+  }
+
+  @include respond-to(desktop) {
+    background-image: url('#{$img}/bg-mob.webp');
+  }
 }
 
 html,
