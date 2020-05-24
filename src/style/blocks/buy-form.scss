@@ -1,0 +1,110 @@
+.buy-form {
+  &__title {
+    display: block;
+    margin-bottom: 16px;
+    @include font-size(23px, 32px);
+    letter-spacing: 0.03em;
+    font-weight: 400;
+    color: $color-text;
+    cursor: default;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  &__side {
+    flex: 0 0 auto;
+    width: 274px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+  }
+
+  &__list {
+
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__send {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 40px;
+  }
+
+  &__send-btn {
+    flex: 0 0 auto;
+    margin-right: 24px;
+  }
+
+  &__send-text,
+  &__send-num {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__send-text {
+    @include style-inline-text;
+    line-height: 1;
+  }
+
+  &__send-num {
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding-left: 0.5em;
+  }
+
+  @include respond-to(tablet-wide) {
+    &__side {
+      width: 230px;
+    }
+
+    &__main {
+      padding-left: 25px;
+    }
+  }
+
+  @include respond-to(tablet) {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__side {
+      width: 100%;
+    }
+
+    &__main {
+      padding-left: 0;
+      padding-top: 16px;
+    }
+  }
+}
+
+
+.pay-icn {
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 2px 0;
+
+  &:first-of-type {
+    margin-left: 10px;
+  }
+}

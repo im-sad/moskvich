@@ -4,7 +4,11 @@
     <div class="biography">
       <div class="biography__book">
         <div class="biography__left-side">
-          <img class="biography__photo" src="/img/bio.jpg" srcset="/img/bio@2x.jpg 2x" alt="Сергей Николевич Москвич" />
+          <picture class="biography__photo">
+            <source type="image/webp" srcset="/img/bio@2x.webp 2x">
+            <source type="image/webp" srcset="/img/bio.webp">
+            <img class="biography__photo-img" src="/img/bio.jpg" srcset="/img/bio@2x.jpg 2x" alt="Сергей Николевич Москвич" />
+          </picture>
           <span class="biography__name">Сергей Николевич <br />Москвич</span>
         </div>
         <div class="biography__right-side">

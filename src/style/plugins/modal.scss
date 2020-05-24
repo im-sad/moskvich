@@ -89,13 +89,13 @@
     top: 10px;
     right: 10px;
     transform: scale(1);
-    color: $color-text;
+    color: $color-border;
     transition: transform 0.1s ease, color 0.3s ease;
     will-change: transform;
 
     &:hover {
       transform: scale(1.25);
-      color: $color-influential;
+      color: $color-text;
     }
   }
 
@@ -112,6 +112,14 @@
   }
 
   &--base {
-    max-width: 816px;
+    max-width: 500px;
+  }
+
+  &--big {
+    max-width: 820px;
+  }
+
+  @include respond-to(tablet-wide) {
+    padding: 20px 16px;
   }
 }

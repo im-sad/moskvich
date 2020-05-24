@@ -2,6 +2,10 @@
   padding-top: 48px;
   padding-bottom: 28px;
 
+  .content--bg-none + & {
+    padding-top: 0;
+  }
+
   &__title {
     color: $color-white;
   }

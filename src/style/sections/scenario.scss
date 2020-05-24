@@ -26,6 +26,10 @@
       left: -105px;
       bottom: 125px;
     }
+
+    .webp &::before {
+      background-image: url('#{$img}/paper-1.webp');
+    }
   }
 
   &__img {
@@ -48,6 +52,10 @@
       left: calc(100% - 48px);
       top: calc(100% - 73px);
       z-index: 2;
+    }
+
+    .webp &::before {
+      background-image: url('#{$img}/paper-2.webp');
     }
   }
 
@@ -95,6 +103,7 @@
     padding-bottom: 37px;
 
     &__figure {
+      display: block;
       max-width: 300px;
       margin-bottom: 31px;
       margin-left: auto;
@@ -148,6 +157,10 @@
         background: url('#{$img}/paper-2.png') no-repeat 0 0;
         background-size: cover;
         transform: scaleX(-1) rotate(180deg);
+      }
+
+      .webp &::before {
+        background-image: url('#{$img}/paper-2.webp');
       }
     }
   }

@@ -49,11 +49,22 @@
     object-fit: cover;
   }
 
+  &__more {
+    @include font-size(14px, 16px);
+    height: 32px;
+    width: 112px;
+  }
+
   &__price {
     display: block;
     @include font-size(18px, 28px);
     letter-spacing: 0.05em;
     font-weight: 600;
     margin-top: 8px;
+
+    i {
+      font-style: normal;
+      font-weight: 500;
+    }
   }
 }

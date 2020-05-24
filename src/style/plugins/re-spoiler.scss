@@ -1,0 +1,15 @@
+.sp-opened ~ .sp-more {
+  display: none;
+}
+
+.sp-more {
+  text-indent: 0;
+  display: block;
+  text-align: left;
+
+  span {
+    cursor: pointer;
+    @include style-more-link;
+    text-decoration: underline;
+  }
+}

@@ -23,6 +23,7 @@
     text-transform: uppercase;
     color: $color-white;
     @include font-size(14px, 16px);
+    letter-spacing: 0.01em;
     text-decoration: none;
     padding-bottom: 16px;
     transition: box-shadow 0.1s ease;
@@ -95,6 +96,7 @@
     text-decoration: none;
     color: $color-white;
     font-size: 15px;
+    letter-spacing: 0.01em;
 
     &:hover {
       color: $color-main;
@@ -103,6 +105,7 @@
 
   // MEDIA
   @include respond-to(desktop-wide) {
+    max-width: 100%;
     transform: translateY(-10%);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -141,7 +144,7 @@
       padding-top: 16px;
       padding-bottom: 16px;
       padding-right: 12px;
-      padding-left: 48px + 10px;
+      padding-left: 34px;
     }
 
     &__sub {
@@ -174,7 +177,7 @@
       padding-top: 16px;
       padding-bottom: 16px;
       padding-right: 48px;
-      padding-left: 48px + 10px;
+      padding-left: 34px;
     }
   }
 }

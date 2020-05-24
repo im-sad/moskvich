@@ -9,6 +9,7 @@ $fonts: '../fonts';
 $color-black: #000;
 $color-white: #fff;
 $color-main: #63DBC5;
+$color-main-dark: #59C6B2;
 $color-accent: #F5AA1E;
 $color-influential: #DE325B;
 $color-paper: #FFFEEC;
@@ -24,6 +25,7 @@ $color-border: #999;
 $color-sub: #443E3E;
 $color-inputs: #ccc;
 $color-lines: #5E4139;
+$color-map: #333;
 
 // Colors-text
 $color-text: $color-black;
@@ -51,11 +53,6 @@ $h4: 2.4rem;
 $h5: 2rem;
 $h6: 1.8rem;
 
-// Paddings
-$padd-xs: 1rem;
-$padd-sm: 2rem;
-$padd-lg: 4rem;
-$padd-xl: 5rem;
 
 // Media
 $media-4k: 1440px;
@@ -64,42 +61,9 @@ $media-slider-brake: 1220px;
 $media-desktop-wide: 1100px;
 $media-desktop: 960px;
 $media-tablet-wide: 840px;
+$media-tablet-large: 775px;
 $media-tablet-medium: 675px;
 $media-tablet: 620px;
 $media-mobile-wide: 540px;
 $media-mobile: 420px;
 $media-phone: 320px;
-
-
-@mixin respond-to($media) {
-  @if $media == 4k {
-    @media only screen and (max-width: $media-4k) { @content; }
-  }
-  @if $media == 2k {
-    @media only screen and (max-width: $media-2k) { @content; }
-  }
-  @if $media == slider-brake {
-    @media only screen and (max-width: $media-slider-brake) { @content; }
-  }
-  @else if $media == desktop-wide {
-    @media only screen and (max-width: $media-desktop-wide + 1) { @content; }
-  }
-  @else if $media == desktop {
-    @media only screen and (max-width: $media-desktop + 1) { @content; }
-  }
-  @else if $media == tablet-wide {
-    @media only screen and (max-width: $media-tablet-wide + 1) { @content; }
-  }
-  @else if $media == tablet-medium {
-    @media only screen and (max-width: $media-tablet-medium + 1) { @content; }
-  }
-  @else if $media == tablet {
-    @media only screen and (max-width: $media-tablet + 1) { @content; }
-  }
-  @else if $media == mobile-wide {
-    @media only screen and (max-width: $media-mobile-wide + 1) { @content; }
-  }
-  @else if $media == mobile {
-    @media only screen and (max-width: $media-mobile + 1) { @content; }
-  }
-}

@@ -15,6 +15,10 @@
     letter-spacing: 0.03em;
   }
 
+  &__height {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
 
   @include respond-to(tablet-wide) {
     padding-top: 32px;
@@ -28,6 +32,10 @@
 
     &__text {
       @include font-size(14px, 24px);
+    }
+
+    &__height {
+      max-height: 100px;
     }
   }
 }

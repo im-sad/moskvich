@@ -19,11 +19,15 @@ var gulp         = require('gulp'),
 		cleanCSS     = require('gulp-clean-css'),
 		csscomb      = require('gulp-csscomb'),
 		imagemin     = require('gulp-imagemin'),
+		terser       = require('gulp-terser'),
+		webp         = require("imagemin-webp"),
+		extReplace   = require("gulp-ext-replace"),
 		pngquant     = require('imagemin-pngquant'),
-		svgSprite = require('gulp-svg-sprites'),
-		svgmin = require('gulp-svgmin'),
+		svgSprite    = require('gulp-svg-sprites'),
+		svgmin       = require('gulp-svgmin'),
 		cheerio = require('gulp-cheerio'),
 		browserSync  = require('browser-sync'),
+		babel = require('gulp-babel'),
 		reload       = browserSync.reload;
 
 sass.compiler = require('node-sass');
@@ -32,7 +36,7 @@ var path = {
 	build: { // Релиз
 			html: 'build/',
 			js: 'build/js/',
-			jsfile: ['build/js/*.js', '!build/js/*.min.js'],
+			jsfile: ['build/js/main.js', 'src/js/map.js', '!build/js/*.min.js'],
 			css: 'build/css/',
 			style: ['build/css/*.css', '!build/css/*.min.css'],
 			img: 'build/img/',
@@ -40,9 +44,9 @@ var path = {
 			fonts: 'build/fonts/',
 	},
 	src: { // Исходники
-			bower: 'src/*.html',
 			html: 'src/*.html',
 			js: 'src/js/*.js',
+			jsfile: ['src/js/main.js', 'src/js/map.js', '!src/js/*.min.js'],
 			style: 'src/style/*.scss',
 			img: 'src/img/**/*.*',
 			tmp: 'src/tmp/**/*.*',
@@ -118,10 +122,6 @@ gulp.task('svgSpriteBuild', function () {
 });
 
 
-
-
-
-
 // ###Собираем HTML###
 gulp.task('html:build', function () {
 	gulp.src(path.src.html)
@@ -167,16 +167,17 @@ gulp.task('css', function(cb) {
 
 // ###Собираем JS###
 gulp.task('js:build', function () {
-	return gulp.src(path.src.js) // Ищем main файл
+	return gulp.src(path.src.jsfile) // Ищем main файл
 		.pipe(plumber())
 		.pipe(fileinclude())
+
 		.pipe(gulp.dest(path.build.js))
 		.pipe(reload({stream: true}));
 });
 // Сжатие
 gulp.task('js:min', function () {
 	return gulp.src(path.build.jsfile)
-		.pipe(uglify())
+		.pipe(terser())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest(path.build.js))
 		.pipe(reload({stream: true}));
@@ -210,6 +211,17 @@ gulp.task('img:temp', function () {
 	reload({stream: true});
 });
 
+gulp.task('img:webp', function () {
+	gulp.src(path.src.img)
+    .pipe(imagemin([
+      webp({quality: 10})
+    ]))
+    .pipe(extReplace(".webp"))
+    .pipe(gulp.dest(path.build.img));
+
+	reload({stream: true});
+});
+
 gulp.task('img', function(cb) {
 	runSequence('img:build', 'img:temp', cb);
 });
@@ -219,7 +231,7 @@ gulp.task('img', function(cb) {
 
 
 // ###Копируем шрифты###
-gulp.task('fonts', function() {
+gulp.task('fonts:build', function() {
 	gulp.src(path.src.fonts)
 		.pipe(gulp.dest(path.build.fonts));
 
@@ -237,7 +249,7 @@ gulp.task('build', [
 	'css',
 	'js:build',
 	'img',
-	'fonts'
+	'fonts:build'
 ]);
 
 

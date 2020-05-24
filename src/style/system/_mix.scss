@@ -52,11 +52,57 @@
   letter-spacing: 0.03em;
 }
 
+@mixin style-text-blocks {
+  @include font-size(16px, 32px);
+  font-family: $font-serif;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+@mixin style-inline-text {
+  @include font-size(14px, 24px);
+  font-weight: 400;
+}
+
+@mixin style-small-text {
+  @include font-size(12px, 18px);
+  font-weight: 400;
+}
 
 
-// No
-%no-wrap {white-space:nowrap;}
-%no-outline {outline:none !important;}
-%no-select {user-select: none;}
-%no-events {pointer-events:none;}
-%no-decoration {text-decoration:none !important;}
+// Media
+@mixin respond-to($media) {
+  @if $media == 4k {
+    @media only screen and (max-width: $media-4k) { @content; }
+  }
+  @if $media == 2k {
+    @media only screen and (max-width: $media-2k) { @content; }
+  }
+  @if $media == slider-brake {
+    @media only screen and (max-width: $media-slider-brake) { @content; }
+  }
+  @else if $media == desktop-wide {
+    @media only screen and (max-width: $media-desktop-wide + 1) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (max-width: $media-desktop + 1) { @content; }
+  }
+  @else if $media == tablet-wide {
+    @media only screen and (max-width: $media-tablet-wide + 1) { @content; }
+  }
+  @else if $media == tablet-large {
+    @media only screen and (max-width: $media-tablet-large + 1) { @content; }
+  }
+  @else if $media == tablet-medium {
+    @media only screen and (max-width: $media-tablet-medium + 1) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (max-width: $media-tablet + 1) { @content; }
+  }
+  @else if $media == mobile-wide {
+    @media only screen and (max-width: $media-mobile-wide + 1) { @content; }
+  }
+  @else if $media == mobile {
+    @media only screen and (max-width: $media-mobile + 1) { @content; }
+  }
+}

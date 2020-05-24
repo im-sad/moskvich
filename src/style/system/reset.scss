@@ -1,4 +1,5 @@
 @import "../system/_mix", "../system/_vars";
+
 /* RESET */
 @-ms-viewport {width:device-width}
 
@@ -7,13 +8,30 @@ article,aside,details,figcaption,figure,footer,header,nav,section,main,menu {dis
 
 
 html {font-size:$font-base;-webkit-tap-highlight-color:transparent;-webkit-backface-visibility:hidden;-ms-overflow-style:scrollbar;box-sizing:border-box;}
-body {font:#{$font-size}/#{$line-height} $font;text-align:left;background:$bg url('#{$img}/bg.jpg') repeat 0 0;color:$color-text;}
-html, body {height:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+
+body {
+  font: #{$font-size}/#{$line-height} $font;
+  text-align: left;
+  background: $bg url('#{$img}/bg.webp') repeat 0 0;
+  color: $color-text;
+  letter-spacing: 0.01em;
+}
+
+html:not(.webp) body {
+  background-image: url('#{$img}/bg.jpg');
+}
+
+html,
+body {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
 
 *,
 *::before,
 *::after {
-  box-sizing:inherit;
+  box-sizing: inherit;
 }
 
 ol, ul {list-style:none}

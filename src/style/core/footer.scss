@@ -106,6 +106,10 @@
     @include font-size(14px, 24px);
     letter-spacing: 0.01em;
     margin-bottom: 8px;
+
+    b {
+      font-weight: 600;
+    }
   }
 
   &__link {

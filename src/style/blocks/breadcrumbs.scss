@@ -4,7 +4,7 @@
   &__list {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
   }
 
@@ -13,24 +13,29 @@
     vertical-align: top;
     @include font-size(10px, 16px);
     margin-right: 4px;
-
+    color: $color-text;
 
     &:last-child {
       margin-right: 0;
     }
   }
 
+  &__sep {
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    margin-left: 4px;
+  }
+
   &__link,
   &__span {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
   }
 
   &__link {
     text-decoration: none;
     color: $color-text;
-    padding-right: 4px + 10px; // bg width
-    background: url('#{$img}/sep.svg') no-repeat right center;
 
     &:hover {
       color: $color-main;
@@ -38,8 +43,25 @@
     }
   }
 
+  // on transparent bg
+  &--invert &__item {
+    color: $color-white;
+  }
+
+  &--invert &__link {
+    color: $color-white;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+
   &__span {
     color: rgba($color-text, 0.5);
     cursor: default;
+  }
+
+  &--invert &__span {
+    color: rgba($color-white, 0.5);
   }
 }

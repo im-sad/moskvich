@@ -1,30 +1,25 @@
 .header {
-  background: rgba($color-black, 0.9);
+  background: $color-black;
   @include better-fonts;
 
   &__w {
     position: relative;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 22px;
-    padding-right: 22px;
   }
 
   &__table {
-    padding-right: 58px; // search width
+    padding-right: 52px; // search width
   }
 
   &__burger {
     display: none;
-    margin-right: 24px;
+    margin-right: 14px;
     margin-bottom: 8px;
   }
 
   &__soc {
     margin-left: 29px;
     margin-bottom: 8px;
-    margin-right: 16px;
+    // margin-right: 16px;
   }
 
   &__search {
@@ -34,19 +29,11 @@
   }
 
   // MEDIA
-  @include respond-to(4k) {
-    &__w {
-      max-width: $w + (48px * 2);
-      padding-left: 48px;
-      padding-right: 48px;
-    }
-
-    &__search {
-      right: 48px;
-    }
-  }
-
   @include respond-to(desktop-wide) {
+    &__table {
+      padding-right: 30px;
+    }
+
     &__burger {
       display: inline-block;
     }
@@ -63,26 +50,36 @@
     &__soc {
       margin-left: auto;
     }
+
+    &__search {
+      right: 0;
+    }
   }
 
   @include respond-to(desktop) {
-    &__w {
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-
-    &__burger {
-      margin-right: 2px;
-    }
-
-    &__search {
-      right: 24px;
+    &__table {
+      padding-right: 50px;
     }
   }
 
   @include respond-to(mobile-wide) {
     &__soc {
       display: none !important;
+    }
+  }
+
+  @include respond-to(mobile) {
+    &__table {
+      padding-right: 0;
+    }
+
+    &__burger {
+      margin-right: 8px;
+    }
+
+    &__logo {
+      width: 165px;
+      height: 16px;
     }
   }
 }
@@ -160,7 +157,8 @@
     height: 16px;
     vertical-align: top;
 
-    &--whatsup {
+    &--whatsup,
+    &--vk {
       width: 20px;
       height: 20px;
     }
@@ -169,7 +167,8 @@
 
 .header-search {
   height: 100%;
-  background: $color-influential;
+  background: $color-black;
+  border-left: 1px solid $color-border;
 
   &__form {
     display: flex;
@@ -179,17 +178,18 @@
   }
 
   &__field {
+    position: relative;
     width: 0;
     overflow: hidden;
     transition: width 0.3s ease, padding-left 0.3s ease;
     align-self: flex-end;
-    padding-bottom: 8px;
+    margin-bottom: 8px;
     padding-left: 0;
   }
 
   &.is-active &__field {
-    width: 204px;
-    padding-left: 10px;
+    width: 225px;
+    padding-left: 18px;
   }
 
   &__input {
@@ -199,12 +199,11 @@
     padding: 0;
     background: $color-white;
     transition: border 0.4s ease, box-shadow 0.4s ease;
-    padding-left: 20px;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.01);
-    padding-right: 20px;
+    padding-left: 18px;
+    padding-right: 30px;
     letter-spacing: 0.01em;
     @include font-size(14px, 34px);
-    font-weight: 500;
+    font-weight: 400;
     margin-right: 6px;
     outline: none;
 
@@ -214,9 +213,34 @@
     }
 
     &:focus {
-      border-color: $color-black;
-      box-shadow: inset 0 0 0 1px $color-black;
+      //
     }
+  }
+
+  &__clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: $color-black;
+    cursor: pointer;
+    opacity: 0;
+    transition: color 0.2s ease, opacity 0.3s ease;
+
+    &:hover {
+      color: $color-influential;
+    }
+  }
+
+  &.is-active &__clear {
+    opacity: 1;
+  }
+
+  &__clear-icn {
+    width: 16px;
+    height: 16px;
   }
 
   &__send {
@@ -228,15 +252,15 @@
     padding: 0;
     margin: 0;
     outline: none;
-    color: $color-white;
+    color: $color-border;
     background: transparent;
     width: 58px;
     padding-bottom: 14px;
     text-align: center;
-    transition: background 0.3s ease;
+    transition: color 0.3s ease;
 
     &:hover {
-      background: $color-main;
+      color: $color-white;
     }
 
     &:active {
@@ -248,5 +272,20 @@
     text-align: center;
     height: 18px;
     width: 18px;
+  }
+
+  @include respond-to(mobile-wide) {
+    border-color: transparent;
+  }
+
+  @include respond-to(mobile-wide) {
+    &__field {
+      padding-left: 0;
+    }
+
+    &.is-active &__field {
+      padding-left: 0;
+      width: calc(100vw - 120px);
+    }
   }
 }

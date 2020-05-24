@@ -45,7 +45,7 @@
 
   .parent-hover:hover &,
   &:hover {
-    color: $color-text;
+    color: $color-white;
     background: $color-influential;
   }
 }
@@ -59,10 +59,13 @@
   outline: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
   font-weight: 500;
+  text-shadow: 1px 1px 0 rgba($color-white, 0.1);
 
+  .parent-hover:hover &,
   &:hover {
     background: $color-influential;
-    color: $color-black;
+    color: $color-white;
+    text-shadow: 1px 1px 0 rgba($color-black, 0.1);
   }
 
   &:active {
@@ -74,6 +77,77 @@
     padding-left: 30px;
     padding-right: 30px;
     height: 32px;
+  }
+
+  &--size-big {
+    height: 44px;
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+
+  &--size-super {
+    height: 48px;
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+}
+
+.btn-influental {
+  background: $color-influential;
+  color: $color-white;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  outline: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 400;
+  text-shadow: 1px 1px 0 rgba($color-white, 0.1);
+
+  .parent-hover:hover &,
+  &:hover {
+    background: $color-danger;
+    color: $color-white;
+  }
+
+  &:active {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.01);
+  }
+
+  &--size-base {
+    @include font-size(14px, 16px);
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 32px;
+  }
+
+  &--size-big {
+    height: 44px;
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+}
+
+
+.btn-hollow {
+  border: 1px solid $color-white;
+  box-shadow: 2px 5px 10px rgba($color-black, 0.1);
+  border-radius: 6px;
+  color: $color-white;
+  @include font-size(14px, 16px);
+
+
+  &:hover {
+    background: $color-white;
+    color: $color-text;
+  }
+
+  &:active {
+    box-shadow: 0 0 0 rgba($color-black, 0.01);
+  }
+
+  &--size-base {
+    height: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   &--size-big {

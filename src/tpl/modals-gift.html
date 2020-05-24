@@ -1,0 +1,146 @@
+<!--noindex-->
+<!-- МОДАЛКА РЕАЛЬНЫХ КНИГ -->
+<div class="question-modal modal modal--center js-modal" id="modal-buy-gift">
+  <div class="modal__inner">
+    <div class="modal-block modal-block--big">
+
+      <span class="modal-block__close js-modal-close">
+        <svg class="modal-block__close-icn icn"><use xlink:href="#icn-close"/></svg>
+      </span>
+
+      <!-- FORM -->
+      <form class="buy-form" action="#">
+        <b class="buy-form__title">Подарочный набор для мам </b>
+
+        <div class="buy-form__container">
+          <div class="buy-form__side">
+            <ul class="buy-form__list">
+              <li class="buy-form__item">
+                <div class="field">
+                  <label for="" class="field__label field__label--small">Мое имя</label>
+                  <input type="text" class="input-main input-main--size-base input input--fluid field__input has-danger" placeholder="Фамилия Имя Отчество">
+                  <span class="field__error">Заполните Фамилию Имя Отчество</span>
+                </div>
+              </li>
+              <li class="buy-form__item">
+                <div class="field">
+                  <label for="" class="field__label field__label--small">E-mail</label>
+                  <input type="email" class="input-main input-main--size-base input input--fluid field__input" placeholder="">
+                </div>
+              </li>
+              <li class="buy-form__item">
+                <div class="field">
+                  <label for="" class="field__label field__label--small">Мой телефон</label>
+                  <input type="tel" class="input-main input-main--size-base input input--fluid field__input js-tel" placeholder="+7 (___) ___-__-__">
+                </div>
+              </li>
+              <li class="buy-form__item">
+                <div class="field">
+                  <span class="field__label field__label--small">Адрес доставки</span>
+                  <label class="select select--size-base has-danger">
+                    <select class="" name="" id="">
+                      <option>---</option>
+                      <option value="1">Санкт-Петербург</option>
+                      <option value="2">Москва</option>
+                      <option value="3">Тюмень</option>
+                    </select>
+                  </label>
+                </div>
+              </li>
+              <li class="buy-form__item">
+                <div class="field">
+                  <input type="text" class="input-main input-main--size-base input input--fluid field__input" placeholder="улица">
+                </div>
+              </li>
+              <li class="buy-form__item">
+                <div class="field">
+                  <input type="text" class="input-main input-main--size-base input input--fluid field__input" placeholder="дом, квартира/офис">
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="buy-form__main">
+            <ul class="buy-form__list">
+              <li class="buy-form__item">
+                <div class="field">
+                  <label for="" class="field__label field__label--small">Кому подарок</label>
+                  <input type="text" class="input-main input-main--size-base input input--fluid field__input" placeholder="Имя или Имя Отчество">
+                </div>
+              </li>
+              <li class="buy-form__item">
+                <div class="field">
+                  <label for="" class="field__label field__label--small">Комментарии к заказу</label>
+                  <textarea class="textarea-main textarea-main--size-auto textarea textarea--fluid field__input has-danger" name="" cols="30" rows="3"></textarea>
+                  <div class="field__assist">Ваши дополнительные пожелания, расскажите нам немного о том, кому делаете подарок. </div>
+                </div>
+              </li>
+              <li class="buy-form__item">
+                <div class="field">
+                  <span class="field__label field__label--small">Способ доставки</span>
+                  <ul class="radio-list">
+                    <li class="radio-list__item">
+                      <label class="radio has-danger">
+                        <input type="radio" name="delivery_type">
+                        <span class="radio__title">Доставка почтой России (от 100 руб., 2—10 дней)</span>
+                      </label>
+                    </li>
+                    <li class="radio-list__item">
+                      <label class="radio">
+                        <input type="radio" name="delivery_type">
+                        <span class="radio__title">Доставка курьером (от 100 руб., 2—10 дней)</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="buy-form__item">
+                <div class="field">
+                  <span class="field__label field__label--small">Способ оплаты</span>
+                  <ul class="radio-list">
+                    <li class="radio-list__item">
+                      <label class="radio">
+                        <input type="radio" name="pay_type">
+                        <span class="radio__title">
+                          Безналичный расчет
+                          <img class="pay-icn" src="/img/pay/yad.svg" alt="">
+                          <img class="pay-icn" src="/img/pay/qiwi.svg" alt="">
+                          <img class="pay-icn" src="/img/pay/maestro.svg" alt="">
+                          <img class="pay-icn" src="/img/pay/alfa.svg" alt="">
+                          <img class="pay-icn" src="/img/pay/yad2.svg" alt="">
+                          <img class="pay-icn" src="/img/pay/sber.svg" alt="">
+                          <img class="pay-icn" src="/img/pay/mastercard.svg" alt="">
+                          <img class="pay-icn" src="/img/pay/visa.svg" alt="">
+                          <img class="pay-icn" src="/img/pay/apple.svg" alt="">
+                        </span>
+                      </label>
+                    </li>
+                    <li class="radio-list__item">
+                      <label class="radio">
+                        <input type="radio" name="pay_type">
+                        <span class="radio__title">Наличными при получении</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="buy-form__send">
+          <button class="buy-form__send-btn btn btn-main btn-main--size-super" type="submit" role="button">Оформить заказ</button>
+
+          <div class="no-wrap">
+            <span class="buy-form__send-text">Сумма к оплате</span>
+            <span class="buy-form__send-num">550 ₽</span>
+          </div>
+        </div>
+
+      </form>
+      <!-- #FORM -->
+
+    </div>
+  </div>
+</div>
+<!--/noindex-->

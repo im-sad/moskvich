@@ -1,0 +1,145 @@
+.section-contacts {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &__map {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 544px;
+    height: 395px;
+    background: $color-map;
+    margin-right: 60px;
+  }
+
+  &__content {
+    color: $color-white;
+  }
+
+  &__block + &__block {
+    margin-top: 46px;
+  }
+
+  &__title {
+    display: block;
+    @include font-size(30px, 40px);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+    cursor: default;
+  }
+
+  @include respond-to(desktop-wide) {
+    &__map {
+      height: 334px;
+      width: 460px;
+    }
+  }
+
+  @include respond-to(desktop) {
+    flex-wrap: wrap;
+
+    &__map {
+      order: 2;
+      margin-right: 0;
+      width: 100%;
+    }
+
+    &__content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 42px;
+    }
+
+    &__title {
+      width: 100%;
+    }
+
+    &__block {
+      width: 57%;
+      padding-right: 40px;
+
+      & + & {
+        margin-top: 0;
+        padding-right: 0;
+        width: 43%;
+      }
+    }
+  }
+
+  @include respond-to(tablet) {
+    &__block {
+      width: 100%;
+      padding-right: 0;
+
+      & + & {
+        width: 100%;
+        margin-top: 46px;
+      }
+    }
+  }
+}
+
+.contacts-block {
+  &__title {
+    display: block;
+    @include font-size(14px, 24px);
+    font-weight: 600;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+
+  &__list {
+    @include style-inline-text;
+  }
+
+  &__list-item {
+    color: $color-white;
+
+    a {
+      color: $color-white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $color-main;
+      text-decoration: underline;
+    }
+  }
+
+  &__soc {
+    margin-top: 12px;
+  }
+
+  &__soc-link {
+    display: inline-block;
+    vertical-align: top;
+    color: $color-white;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  &__soc-icn {
+    width: 16px;
+    height: 16px;
+
+    &--whatsup,
+    &--vk {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

@@ -184,3 +184,56 @@
     }
   }
 }
+
+
+// SCENARIO
+.jumbo-scenario {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 420px;
+  color: $color-white;
+  background: url('#{$img}/jumbo-scenario.jpg') no-repeat right center, linear-gradient(to bottom, #0b0d0c, #151915);
+  background-size: auto 100%;
+
+  &__title {
+    @include font-size(46px, 72px);
+    color: $color-white;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: default;
+    max-width: 600px;
+    margin-bottom: 110px;
+  }
+
+  &__title-bold {
+    font-weight: 700;
+    color: $color-main;
+  }
+
+  @include respond-to(2k) {
+    &__title {
+      max-width: 400px;
+      margin-bottom: 28px;
+    }
+  }
+
+  @include respond-to(tablet-wide) {
+    height: 224px;
+
+    &__title {
+      @include font-size(23px, 32px);
+      letter-spacing: 0.03em;
+      max-width: 270px;
+    }
+
+    &__title-bold {
+      font-weight: 500;
+    }
+  }
+
+  @include respond-to(mobile-wide) {
+    background-position: right -150px center;
+  }
+}

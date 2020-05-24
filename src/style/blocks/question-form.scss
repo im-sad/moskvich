@@ -18,9 +18,12 @@
     letter-spacing: 0.03em;
   }
 
+  &__rate {
+    margin-top: 4px;
+  }
+
   &__send {
     @include font-size(14px, 16px);
-    letter-spacing: 0.01em;
     height: 48px;
     min-width: 176px;
     padding-left: 20px;

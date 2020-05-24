@@ -2,11 +2,13 @@
   <div class="w">
 
     <div class="scenario">
-      <div class="scenario__figure">
-        <img class="scenario__img" src="/img/typewriter.jpg" alt="">
-      </div>
+      <picture class="scenario__figure">
+        <source type="image/webp" srcset="/img/typewriter@2x.webp 2x">
+        <source type="image/webp" srcset="/img/typewriter.webp">
+        <img class="scenario__img" src="/img/typewriter.jpg" srcset="/img/typewriter@2x.jpg 2x" alt="">
+      </picture>
       <div class="scenario__content">
-        <span class="scenario__link" data-modal="modal-signin">
+        <span class="scenario__link" data-modal="modal-scenario">
           <span class="scenario__link-inside">Хочешь узнать как написать книгу или сценарий?</span>
         </span>
       </div>

@@ -1,0 +1,48 @@
+.rating {
+  display: inline-flex;
+  vertical-align: top;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: row-reverse;
+  position: relative;
+  line-height: 1;
+
+  &--disabled {
+    pointer-events: none;
+  }
+}
+
+.rating-0 {
+  filter: grayscale(100%);
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > label {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  background-image: url('#{$img}/star-hollow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s ease;
+  margin-right: 2px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.rating > input:checked ~ label,
+.rating > input:checked ~ label ~ label {
+  background-image: url('#{$img}/star.svg');
+}
+
+
+.rating > input:not(:checked) ~ label:hover,
+.rating > input:not(:checked) ~ label:hover ~ label {
+  background-image: url('#{$img}/star.svg');
+}

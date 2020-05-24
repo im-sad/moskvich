@@ -22,9 +22,13 @@
 }
 
 .content {
-  background: $color-white;
-  padding-bottom: 78px;
+  padding-bottom: 60px;
   padding-top: 12px;
+  background: $color-white;
+
+  &--bg-none {
+    background: transparent;
+  }
 
   &__breadcrumbs {
     padding-bottom: 44px;

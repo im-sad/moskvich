@@ -65,10 +65,12 @@
     display: block;
     margin-bottom: 14px;
     color: $color-main;
+    text-decoration: underline;
   }
 
   &__link:hover &__title {
     text-decoration: underline;
+    color: $color-white;
   }
 
   &__text {

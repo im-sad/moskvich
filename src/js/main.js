@@ -1,10 +1,46 @@
+@@include('./polyfill-closest.js');
+@@include('./polyfill-foreach.js');
 @@include('./swiper.js');
 @@include('./modal.js');
 @@include('./vanillaTextMask.js');
+@@include('./tabs.js');
+@@include('./re-spoiler.js');
 
 
 document.addEventListener('DOMContentLoaded', function() {
   'use strict';
+
+  // Search clear
+  (function() {
+    const clearBtns = document.getElementsByClassName('js-clear-input');
+
+
+    for (let i = 0; i < clearBtns.length; i++) {
+      clearBtns[i].addEventListener('click', function() {
+        let input = this.parentNode.getElementsByTagName('input')[0];
+        if (!input) return;
+
+        input.value = '';
+        input.focus();
+      });
+    }
+  })();
+
+
+  // Tabs
+  (function() {
+    const tabsEl = document.getElementById('js-scenario');
+    if (!tabsEl) return;
+
+    const tabsScenario = tabs({
+      el: '#js-scenario',
+      tabNavigationLinks: '.js-tab',
+      tabContentContainers: '.js-tab-content'
+    });
+
+    tabsScenario.init();
+  })();
+
 
   // Gifts active blocks
   (function() {
@@ -110,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   })();
 
+
   // Books slider
   (function() {
     const booksSlider = document.getElementById('js-books-slider');
@@ -134,6 +171,34 @@ document.addEventListener('DOMContentLoaded', function() {
         1221: {
           freeMode: false,
           slidesPerView: 5
+        }
+      }
+    });
+  })();
+
+  (function() {
+    const catSlider = document.getElementById('js-cat-slider');
+
+    if (!catSlider) return;
+
+    new Swiper (catSlider, {
+      slidesPerView: 'auto',
+      loop: false,
+      freeMode: true,
+      autoHeight: true,
+      navigation: {
+        nextEl: '.cats-block__arrow--next',
+        prevEl: '.cats-block__arrow--prev',
+      },
+      pagination: {
+        el: '.cats-block__pag',
+        dynamicBullets: true,
+        clickable: true
+      },
+      breakpoints: {
+        1221: {
+          freeMode: false,
+          slidesPerView: 4
         }
       }
     });
@@ -175,19 +240,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Textarea auto-height
   (function() {
-    document.querySelectorAll('textarea').forEach(el => {
-      const bordersWidth = parseInt(getComputedStyle(el, null).getPropertyValue('border-top-width'));
+    const textareas = document.querySelectorAll('textarea');
+
+    for (let i = 0; i < textareas.length; i++) {
+      let el = textareas[i];
+      let bordersWidth = parseInt(getComputedStyle(el, null).getPropertyValue('border-top-width'));
 
       el.style.height = el.setAttribute('style', 'height: ' + (el.scrollHeight + bordersWidth * 2) + 'px');
       el.classList.add('auto');
-      el.addEventListener('input', e => {
-          el.style.height = 'auto';
-          el.style.height = (el.scrollHeight + bordersWidth * 2) + 'px';
+
+      el.addEventListener('input', function() {
+        el.style.height = 'auto';
+        el.style.height = (el.scrollHeight + bordersWidth * 2) + 'px';
       });
-    });
+    }
   })();
-
-
 
 
 });

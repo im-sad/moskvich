@@ -1,0 +1,37 @@
+.comment {
+  &__name {
+    display: block;
+    @include font-size(9px, 12px);
+    letter-spacing: 0.02em;
+    font-weight: 600;
+    margin-bottom: 12px;
+    cursor: default;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &__rate,
+  &__date {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__rate {
+    flex: 0 0 auto;
+    margin-right: 12px;
+  }
+
+  &__date {
+    @include font-size(9px, 9px);
+    margin-top: -4px;
+  }
+
+  &__text {
+    @include font-size(12px, 22px);
+  }
+}

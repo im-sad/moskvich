@@ -1,10 +1,41 @@
 /* FORMS */
 .field {
+  position: relative;
   display: block;
 
   &__label {
     display: block;
     @include font-size(14px, 24px);
+
+    &--small {
+      @include style-small-text;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__assist {
+    display: block;
+    @include style-small-text;
+    color: $color-border;
+    padding: 2px ;
+  }
+
+  &__error {
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    color: $color-danger;
+    position: absolute;
+    bottom: -1em;
+    left: 0;
+    transform: translateY(2px);
+    background: $color-white;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+  }
+
+  .has-danger + &__error {
+    opacity: 1;
   }
 }
 
@@ -15,16 +46,84 @@
   line-height: $form-line-height;
   vertical-align: middle;
 
+  &.has-danger {
+    border-color: $color-danger;
+  }
+
   &--fluid {
     width: 100%;
   }
 }
+
+.select {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: $color-black;
+    transform: translateY(-2px);
+  }
+
+  select {
+    cursor: pointer;
+    border: 2px solid $color-inputs;
+    border-radius: 2px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-weight: 500;
+    text-indent: 1px;
+    text-overflow: '';
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none !important;
+  }
+
+  &.has-danger select {
+    border-color: $color-danger;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  select:hover {
+    border-color: $color-border;
+  }
+
+  select:focus {
+    border-color: $color-black;
+  }
+
+  &--size-base select {
+    padding: 8px 16px;
+    height: 36px;
+    line-height: 34px;
+    @include font-size(14px, 16px);
+  }
+}
+
 
 .input-main {
   border: 2px solid $color-inputs;
   border-radius: 2px;
   font-weight: 500;
 
+  &.has-danger {
+    border-color: $color-danger;
+  }
 
   &::placeholder {
     opacity: 1;
@@ -51,9 +150,12 @@
 /* TEXTAREA */
 .textarea {
   @extend .input;
-
   resize: none;
   -webkit-appearance: none;
+
+  &.has-danger {
+    border-color: $color-danger;
+  }
 
   &.auto {
     overflow-y: hidden;
@@ -70,5 +172,212 @@
 
   &--size-auto {
     @include font-size(14px, 16px);
+  }
+}
+
+
+/* RADIO & CHECKBOX */
+.radio-list {
+  @include style-small-text;
+
+  .field__label + & {
+    margin-top: 8px;
+  }
+
+  &__item {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+$control-size: 16px;
+$color-bg: #fff;
+$color-checked: $color-main;
+$color-disabled: #eee;
+
+
+.checkbox,
+.radio {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: $control-size;
+
+  &__title {
+    padding-left: ($control-size + 8px);
+    display: inline-block;
+    vertical-align: top;
+    user-select: none;
+  }
+
+  &__title:empty {
+    padding-left: $control-size;
+  }
+
+  &__title::before,
+  &__title::after {
+    content: '';
+    position: absolute;
+  }
+
+  input {
+    vertical-align: top;
+    margin: 0 3px 0 0;
+    width: 17px;
+    height: 17px;
+  }
+
+  input:not(checked) {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+/* checkbox */
+.checkbox {
+  &__title::before {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: $control-size;
+    height: $control-size;
+    background: $color-bg;
+    left: 0;
+    top: 0;
+    border-radius: 3px;
+    border: 1px solid $color-border;
+    transition: all 0.3s ease;
+  }
+
+  &__title::after {
+    width: $control-size;
+    height: $control-size;
+    background: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNzAgNzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBvbHlnb24gZmlsbD0iI2ZmZiIgcG9pbnRzPSI0Ny43MTUsMjMuNjg2IDMyLjE1OSwzOS4yNDMgMjIuMjg1LDI5LjM2OSAxOC43NDksMzIuOTA0IDMyLjE1OSw0Ni4zMTQgNTEuMjUxLDI3LjIyMiIvPjwvc3ZnPg==') no-repeat center center;
+    background-size: $control-size + 4px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.2s ease;
+  }
+
+  // disabled
+  input:disabled ~ &__title {
+    cursor: default;
+
+    &::before {
+      opacity: 0.7;
+      background: $color-disabled;
+      filter: grayscale(1);
+    }
+  }
+
+  // checked
+  input:checked ~ &__title::before {
+    border-color: darken($color-checked, 2%);
+    background: $color-checked;
+  }
+
+  input:checked ~ &__title::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  // hover
+  &:hover input:not(:checked) ~ &__title:before {
+    border-color: lighten($color-checked, 20%);
+  }
+
+  &:hover input:checked + &__title:before {
+    border-color: darken($color-checked, 15%);
+  }
+
+  // focus
+  & input:focus + &__title:before {
+    box-shadow: 0 0 0 2px lighten($color-checked, 40%);
+  }
+}
+
+
+/* radio */
+.radio {
+  &__title::before {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: $control-size;
+    height: $control-size;
+    line-height: $control-size;
+    background: $color-bg;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    border: 1px solid $color-border;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  &.has-danger &__title::before {
+    border-color: $color-danger;
+  }
+
+  &__title::after {
+    background: darken($color-checked, 10%);
+    position: absolute;
+    left: $control-size / 2 / 2;
+    top: $control-size / 2 / 2;
+    width: $control-size / 2;
+    height: $control-size / 2;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: scale(0);
+  }
+
+  // checked
+  input:checked ~ &__title::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  // disabled
+  input:disabled ~ &__title {
+    cursor: default;
+
+    &::before {
+      opacity: 0.9;
+      background: $color-disabled;
+    }
+
+    &::before,
+    &::after {
+      filter: grayscale(1);
+    }
+  }
+
+  // hover
+  &:hover input:not(:checked) ~ &__title:before {
+    border-color: lighten($color-checked, 20%);
+  }
+
+  &:hover input[disabled][checked] ~ &__title:before {// 'not(:disabled)' no work
+    border-color: $color-border;
+  }
+
+  &:hover input:checked + &__title:before {
+    border-color: darken($color-checked, 2%);
+  }
+
+  // focus
+  & input:focus + &__title:before {
+    box-shadow: 0 0 0 2px lighten($color-checked, 40%);
   }
 }

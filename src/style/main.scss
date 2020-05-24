@@ -9,12 +9,13 @@
 @import "core/footer";
 
 // Elements
-@import "components/forms"; // эл-ты форм
-@import "components/btns"; // кнопки
+@import "components/forms";
+@import "components/btns";
 
 // Plugins
 @import "plugins/swiper";
 @import "plugins/modal";
+@import "plugins/re-spoiler";
 
 // Sections
 @import "sections/books";
@@ -29,6 +30,7 @@
 @import "sections/events";
 @import "sections/seo-text";
 @import "sections/article";
+@import "sections/contacts";
 
 // Blocks
 @import "blocks/burger";
@@ -38,14 +40,15 @@
 @import "blocks/slider-dots";
 @import "blocks/breadcrumbs";
 @import "blocks/pag";
+@import "blocks/comment";
+@import "blocks/rate";
+@import "blocks/buy-form";
+@import "blocks/work-el";
 
 // Pages
-@import "pages/index";
 @import "pages/gift";
+@import "pages/book";
+@import "pages/scenario";
 
 // Helpres
-@import "components/assists"; //в конце, для большего приоритета
-
-
-//Other
-//@import "system/media";
+@import "components/assists";
