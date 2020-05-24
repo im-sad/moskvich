@@ -170,7 +170,9 @@ gulp.task('js:build', function () {
 	return gulp.src(path.src.jsfile) // Ищем main файл
 		.pipe(plumber())
 		.pipe(fileinclude())
-
+		// .pipe(babel({
+		// 		presets: ['@babel/env']
+		// }))
 		.pipe(gulp.dest(path.build.js))
 		.pipe(reload({stream: true}));
 });
@@ -247,7 +249,7 @@ gulp.task('build', [
 	'clean',
 	'html:build',
 	'css',
-	'js:build',
+	'js',
 	'img',
 	'fonts:build'
 ]);
@@ -262,7 +264,7 @@ gulp.task('watch', function(){
 			gulp.start('css');
 	});
 	watch([path.watch.js], function(event, cb) {
-			gulp.start('js:build');
+			gulp.start('js');
 	});
 	watch([path.watch.img], function(event, cb) {
 			gulp.start('img:build');

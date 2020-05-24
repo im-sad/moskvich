@@ -7,5 +7,6 @@ install packages
 
     `$ gulp`
 
-### Structure
-----
+### Deploy
+
+    `surge --domain moskvich.surge.sh`
