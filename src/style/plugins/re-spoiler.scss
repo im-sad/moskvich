@@ -11,5 +11,6 @@
     cursor: pointer;
     @include style-more-link;
     text-decoration: underline;
+    transition: all 0.2s ease;
   }
 }

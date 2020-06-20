@@ -122,6 +122,134 @@
   }
 }
 
+// FANTASTIC
+.jumbo-fantastic {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  padding-bottom: 60px;
+  height: 420px;
+  background: $color-black url('#{$img}/jumbo-fantastic.jpg') no-repeat right center;
+
+  &__title {
+    @include font-size(46px, 72px);
+    color: $color-white;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: default;
+  }
+
+
+  @include respond-to(2k) {
+    background-position: right -100px center;
+  }
+
+  @include respond-to(tablet-wide) {
+    padding-bottom: 24px;
+    height: 176px;
+    background-size: auto 100%;
+    background-position: right center;
+
+    &__title {
+      @include font-size(23px, 32px);
+      font-weight: 400;
+    }
+  }
+
+  @include respond-to(mobile) {
+    background-image: url('#{$img}/jumbo-fantastic-mob.jpg');
+    background-position: right -40px center;
+  }
+}
+
+// HUMOR
+.jumbo-humor {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  padding-bottom: 60px;
+  height: 420px;
+  background: #EBD799 url('#{$img}/jumbo-humor.jpg') no-repeat right center;
+
+  &__title {
+    @include font-size(46px, 72px);
+    color: $color-black;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: default;
+  }
+
+  @include respond-to(2k) {
+    background-position: right -100px center;
+  }
+
+  @include respond-to(desktop-wide) {
+    background-position: right -280px center;
+  }
+
+  @include respond-to(tablet-wide) {
+    padding-bottom: 36px;
+    height: 176px;
+    background-size: auto 100%;
+    background-image: url('#{$img}/jumbo-humor-mob.jpg');
+    background-position: right center;
+
+    &__title {
+      @include font-size(23px, 32px);
+      font-weight: 400;
+    }
+  }
+
+  @include respond-to(mobile) {
+    background-image: url('#{$img}/jumbo-humor-mob.jpg');
+    background-position: right -40px center;
+  }
+}
+
+// POETRY
+.jumbo-poetry {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  padding-bottom: 60px;
+  height: 420px;
+  background: #EBD799 url('#{$img}/jumbo-poetry.jpg') no-repeat center center, linear-gradient(to bottom,#81867e,#6e7975,#946e4d);
+
+  &__title {
+    @include font-size(46px, 72px);
+    color: $color-white;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: default;
+  }
+
+  @include respond-to(2k) {
+    background-position: right -100px center;
+  }
+
+  @include respond-to(tablet-wide) {
+    padding-bottom: 36px;
+    height: 176px;
+    background-size: cover;
+    background-position: right center;
+
+    &__title {
+      @include font-size(23px, 32px);
+      font-weight: 400;
+    }
+  }
+
+  @include respond-to(mobile) {
+    background-image: url('#{$img}/jumbo-poetry-mob.jpg'), linear-gradient(to bottom,#81867e,#6e7975,#946e4d);
+  }
+}
+
 
 // GIFT
 .jumbo-gift {

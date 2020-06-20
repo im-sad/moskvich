@@ -1,0 +1,32 @@
+@@include('tpl/outer/start.html', { "title": "Юмор" })
+
+
+<body class="body">
+<noscript><div class="noJs">Для полноценной работы сайта, необходимо включить JavaScript!</div></noscript>
+
+<script>
+(function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'img/sprite.svg', true);
+  xhr.send();
+  xhr.onload = function() {
+    var div = document.createElement('div');
+    div.innerHTML = xhr.responseText;
+    document.body.insertBefore(div, document.body.childNodes[0]);
+  }
+})();
+</script>
+
+
+@@include('tpl/header.html')
+
+<div class="core">
+  @@include('tpl/pages/humor.html')
+</div>
+
+@@include('tpl/footer.html')
+
+
+<script src="js/main.min.js"></script>
+</body>
+</html>

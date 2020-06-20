@@ -28,6 +28,7 @@ var gulp         = require('gulp'),
 		cheerio = require('gulp-cheerio'),
 		browserSync  = require('browser-sync'),
 		babel = require('gulp-babel'),
+		surge = require('gulp-surge'),
 		reload       = browserSync.reload;
 
 sass.compiler = require('node-sass');
@@ -241,7 +242,12 @@ gulp.task('fonts:build', function() {
 });
 
 
-
+gulp.task('surge', [], function () {
+  return surge({
+    project: './build',         // Path to your static build directory
+    domain: 'moskvich.surge.sh'  // Your domain or Surge subdomain
+  })
+})
 
 
 // Все задачи в массиве
