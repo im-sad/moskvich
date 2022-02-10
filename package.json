@@ -42,7 +42,7 @@
     "gulp-terser": "^1.2.0",
     "gulp-webp": "^4.0.1",
     "imagemin-webp": "^5.1.0",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "main": "index.js",
   "repository": "git@github.com:im-sad/BaseGulp.git",
